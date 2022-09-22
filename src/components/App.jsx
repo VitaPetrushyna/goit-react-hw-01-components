@@ -14,13 +14,13 @@
 //     </div>
 //   );
 // };
-
+import user from '../user.json';
 import { Profile } from './Profile/Profile';
 
 export const App = () => {
   return (
     <div>
-      <Profile />
+      <Profile user={user} />
     </div>
   );
 };
