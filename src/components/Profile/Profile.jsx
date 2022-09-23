@@ -1,13 +1,11 @@
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 export const Profile = ({
-  user: {
-    username,
-    tag,
-    location,
-    avatar = 'https://cdn-icons-png.flaticon.com/512/1077/1077012.png',
-    stats,
-  },
+  username,
+  tag,
+  location,
+  avatar = 'https://cdn-icons-png.flaticon.com/512/1077/1077012.png',
+  stats,
 }) => {
   return (
     <div class="profile">
@@ -36,6 +34,12 @@ export const Profile = ({
   );
 };
 
-// Profile.propTypes = {
-//   user,
-// };
+Profile.propTypes = {
+  user: PropTypes.exact({
+    username: PropTypes.string.isRequired,
+    tag: PropTypes.string.isRequired,
+    location: PropTypes.string.isRequired,
+    avatar: PropTypes.string.isRequired,
+    stats: PropTypes.number.isRequired,
+  }),
+};
