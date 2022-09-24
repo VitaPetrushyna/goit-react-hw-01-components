@@ -1,6 +1,17 @@
 import PropTypes from 'prop-types';
+import {
+  Card,
+  ImageContainer,
+  Image,
+  TitleName,
+  TitleInfo,
+  InfoContainer,
+  InfoList,
+  Label,
+  Quantiti,
+} from './Profile.styled';
 
-export const Profile = ({
+const Profile = ({
   username,
   tag,
   location,
@@ -8,29 +19,29 @@ export const Profile = ({
   stats,
 }) => {
   return (
-    <div class="profile">
-      <div class="description">
-        <img src={avatar} alt="User avatar" class="avatar" />
-        <p class="name">{username}</p>
-        <p class="tag">{tag}</p>
-        <p class="location">{location}</p>
-      </div>
+    <Card>
+      <ImageContainer>
+        <Image src={avatar} alt="User avatar" />
+        <TitleName>{username}</TitleName>
+        <TitleInfo>{tag}</TitleInfo>
+        <TitleInfo>{location}</TitleInfo>
+      </ImageContainer>
 
-      <ul class="stats">
-        <li>
-          <span class="label">Followers</span>
-          <span class="quantity">{stats.followers}</span>
-        </li>
-        <li>
-          <span class="label">Views</span>
-          <span class="quantity">{stats.views}</span>
-        </li>
-        <li>
-          <span class="label">Likes</span>
-          <span class="quantity">{stats.likes}</span>
-        </li>
-      </ul>
-    </div>
+      <InfoContainer>
+        <InfoList>
+          <Label>Followers</Label>
+          <Quantiti>{stats.followers}</Quantiti>
+        </InfoList>
+        <InfoList>
+          <Label>Views</Label>
+          <Quantiti>{stats.views}</Quantiti>
+        </InfoList>
+        <InfoList>
+          <Label>Likes</Label>
+          <Quantiti>{stats.likes}</Quantiti>
+        </InfoList>
+      </InfoContainer>
+    </Card>
   );
 };
 
@@ -43,3 +54,5 @@ Profile.propTypes = {
     stats: PropTypes.number.isRequired,
   }),
 };
+
+export default Profile;
