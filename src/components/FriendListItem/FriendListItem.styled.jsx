@@ -2,6 +2,8 @@ import styled from 'styled-components';
 
 export const FriendCard = styled.li`
   display: flex;
+  justify-content: flex-start;
+  align-items: center;
   width: 270px;
   padding: 15px;
   margin: 10px auto 0 auto;
@@ -22,4 +24,18 @@ export const FriendImage = styled.img`
 export const FriendName = styled.p`
   text-align: center;
   font-weight: 700;
+`;
+
+export const FriendSelected = styled.span`
+  border: 1px solid
+    ${props => {
+      return props.selected ? 'green' : 'red';
+    }};
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+
+  background-color: ${props => {
+    return props.selected ? 'green' : 'red';
+  }};
 `;
